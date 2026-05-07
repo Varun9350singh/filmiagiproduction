@@ -1,0 +1,338 @@
+@import "../variables";
+@import "../mixins/mixins";
+
+.profile-page-container {
+  background: radial-gradient(circle at top, rgba($gold-dark, 0.1), transparent 35%),
+    linear-gradient(180deg, $black 0%, rgba($black, 0.98) 100%);
+  color: $white;
+  min-height: 100vh;
+  font-family: $font-body;
+  padding-bottom: 6rem;
+
+  .profile-hero {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 5%;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba($gold-light, 0.08);
+      filter: blur(45px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+
+      .hero-label {
+        display: inline-block;
+        margin-bottom: 1rem;
+        letter-spacing: 0.45em;
+        font-size: 0.8rem;
+        color: $gold-mid;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-family: $font-luxury;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 0.95;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        @include text-gold-gradient();
+      }
+
+      .hero-intro {
+        max-width: 700px;
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: rgba($white, 0.7);
+      }
+    }
+
+    .hero-accent {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+
+      .accent-line {
+        width: 4px;
+        height: 10rem;
+        background: linear-gradient(180deg, $gold-light, rgba($gold-light, 0));
+        border-radius: 999px;
+      }
+
+      .accent-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: $gold-light;
+        box-shadow: 0 0 30px rgba($gold-light, 0.35);
+      }
+    }
+  }
+
+  .profile-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    gap: 2.5rem;
+
+    @include respond-to("tablet") {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-sidebar,
+    .profile-main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .profile-image-wrap {
+        position: relative;
+        border-radius: 2rem;
+        overflow: hidden;
+        border: 1px solid rgba($white, 0.08);
+        background: rgba($white, 0.03);
+        box-shadow: 0 40px 90px rgba($black, 0.3);
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+          aspect-ratio: 4 / 5;
+        }
+
+        .role-badge {
+          position: absolute;
+          left: 1.5rem;
+          bottom: 1.5rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.8rem 1.4rem;
+          border-radius: 999px;
+          background: rgba($gold-dark, 0.85);
+          color: $white;
+          font-size: 0.85rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          box-shadow: 0 16px 40px rgba($black, 0.3);
+        }
+      }
+
+      .info-panel {
+        border-radius: 2rem;
+        padding: 2rem;
+        background: rgba($white, 0.04);
+        border: 1px solid rgba($gold-light, 0.12);
+        box-shadow: inset 0 0 0 1px rgba($white, 0.02);
+
+        h2 {
+          font-family: $font-luxury;
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+          color: $gold-light;
+        }
+
+        p {
+          line-height: 1.8;
+          color: rgba($white, 0.8);
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .profile-main {
+      display: grid;
+      gap: 1.5rem;
+
+      .profile-card {
+        padding: 2rem;
+        border-radius: 2rem;
+        background: rgba($white, 0.03);
+        border: 1px solid rgba($white, 0.08);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 30px 80px rgba($black, 0.28);
+
+        &-head {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+
+          span {
+            color: $gold-mid;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+          }
+
+          h2 {
+            font-family: $font-luxury;
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            color: $white;
+            line-height: 1.1;
+          }
+        }
+
+        &-body {
+          max-height: 28rem;
+          overflow-y: auto;
+          padding-right: 0.75rem;
+          
+          // Custom scrollbar styling
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+          
+          &::-webkit-scrollbar-track {
+            background: rgba($white, 0.05);
+            border-radius: 3px;
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background: rgba($gold-light, 0.3);
+            border-radius: 3px;
+            
+            &:hover {
+              background: rgba($gold-light, 0.5);
+            }
+          }
+          
+          // Firefox scrollbar
+          scrollbar-color: rgba($gold-light, 0.3) rgba($white, 0.05);
+          scrollbar-width: thin;
+          
+          p {
+            line-height: 1.9;
+            color: rgba($white, 0.8);
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            margin-bottom: 1.2rem;
+            
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .profile-contact-card {
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+
+          @include respond-to("tablet") {
+            grid-template-columns: 1fr;
+          }
+
+          .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 1.25rem;
+            border: 1px solid rgba($gold-light, 0.18);
+            background: rgba($black, 0.65);
+            color: $white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+
+            span:first-child {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 2.3rem;
+              height: 2.3rem;
+              border-radius: 50%;
+              background: rgba($gold-light, 0.12);
+              color: $gold-light;
+              font-size: 1.05rem;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              background: rgba($gold-light, 0.12);
+              border-color: rgba($gold-light, 0.4);
+            }
+          }
+        }
+      }
+
+      .profile-links-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.75rem 2rem;
+        border-radius: 1.75rem;
+        border: 1px solid rgba($white, 0.08);
+        background: rgba($black, 0.5);
+
+        p {
+          color: rgba($white, 0.75);
+          font-size: 0.95rem;
+          line-height: 1.8;
+        }
+
+        .profile-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.35rem;
+            border-radius: 999px;
+            border: 1px solid rgba($white, 0.08);
+            background: rgba($white, 0.04);
+            color: rgba($white, 0.9);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+
+            &.active {
+              background: rgba($gold-light, 0.14);
+              border-color: rgba($gold-light, 0.35);
+              color: $white;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              background: rgba($gold-light, 0.12);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

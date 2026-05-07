@@ -1,0 +1,163 @@
+#hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: $black;
+
+  video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+  }
+
+  #transparent-Layer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.338);
+  }
+
+  @include flex-center-row();
+
+  #hero-text-section {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 90rem;
+    padding: 0 2rem;
+    @include flex-center-column();
+    gap: 5px;
+
+    // 🔹 Top label
+    h3 {
+      font-size: 1.2rem;
+      letter-spacing: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      @include text-gold-gradient();
+
+      @include respond-to("tablet") {
+        font-size: 0.9rem;
+        letter-spacing: 0.5rem;
+      }
+    }
+
+    // 🔹 Main heading block
+    h1 {
+      font-family: $font-luxury;
+      font-size: clamp(3rem, 10vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      color: $white;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    h1:nth-of-type(2) {
+      @include text-gold-gradient();
+    }
+
+    // 🔹 Event section
+    #event-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      margin: 1.5rem 0;
+
+      @include respond-to("tablet") {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .event-card {
+        position: relative;
+        text-align: center;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        transition: $transition-smooth;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        h4 {
+          font-size: 1rem;
+          letter-spacing: 0.3rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          @include text-gold-gradient();
+        }
+
+        h2 {
+          font-size: clamp(1.2rem, 3vw, 2.2rem);
+          font-weight: 600;
+          color: $white;
+          letter-spacing: 0.1rem;
+        }
+      }
+
+      // divider
+      #event-section1::after {
+        content: "";
+        position: absolute;
+        right: -2.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 4rem;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          $gold-mid,
+          transparent
+        );
+
+        @include respond-to("tablet") {
+          display: none;
+        }
+      }
+    }
+
+
+    .event-card,
+    #hero-text-section button,
+    #hero-text-section h3,
+    #hero-text-section h1,
+    #hero-text-section > h4 {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    // 🔹 Bottom text
+    > h4 {
+      font-size: 0.8rem;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-top: 4rem;
+      font-weight: 400;
+      color: rgba($white, 0.5);
+      animation: bounce 2s infinite ease-in-out;
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+}

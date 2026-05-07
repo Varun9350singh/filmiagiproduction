@@ -1,0 +1,177 @@
+@import "../slider/slider";
+
+#visionary {
+  position: relative;
+  background-color: #050505;
+  
+
+  #founder-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    @include flex-center-column();
+
+    #founder-gradient {
+      height: clamp(32rem, 40vw, 50rem);
+      width: clamp(32rem, 40vw, 50rem);
+      @include backgroundGoldLinear();
+      border-radius: 100%;
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: $font-luxury;
+      font-size: clamp(5rem, 15vw, 15rem);
+      font-weight: 700;
+      z-index: 2;
+      position: absolute;
+      color: white;
+      text-transform: uppercase;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    #founder-first-name {
+      left: 10%;
+      top: 35%;
+      transform: translateY(-50%);
+
+      @include respond-to("tablet") {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 25%;
+        font-size: clamp(3rem, 12vw, 6rem);
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-family: $font-body;
+      font-size: clamp(1rem, 2vw, 2.5rem);
+      position: absolute;
+      z-index: 8;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    #founder-role {
+      left: 8%;
+      top: 15%;
+      @include text-gold-gradient();
+
+      @include respond-to("tablet") {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+
+    #founder-last-name {
+      right: 5%;
+      bottom: 35%;
+      @include backgroundGoldLinear();
+      background-clip: text;
+      color:transparent;
+
+      @include respond-to("tablet") {
+        display: none; // Hide on small screens to avoid clutter
+      }
+    }
+
+    #founder-image {
+      height: 80vh;
+      width: 70vw;
+      max-width: 90%;
+      position: absolute;
+      z-index: 5;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      object-fit: contain;
+
+      @include respond-to("tablet") {
+        height: 60vh;
+        width: 85vw;
+      }
+    }
+
+    button {
+      background: transparent;
+      color: $white;
+      padding: 1rem 2.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: absolute;
+      bottom: 8%;
+      right: 15%;
+      border: 1px solid $gold-mid;
+      border-radius: 50px;
+      z-index: 10;
+      transition: $transition-smooth;
+
+      &:hover {
+        background: $gold-linear;
+        color: $black;
+        border-color: transparent;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      @include respond-to("tablet") {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 5%;
+        width: auto;
+        padding: 0.8rem 2rem;
+        font-size: 0.8rem;
+
+        &:hover {
+          transform: translate(50%, -5px);
+        }
+      }
+    }
+  }
+
+  #text-animation-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $black;
+    z-index: 20;
+    @include flex-center-column();
+    gap: 2rem;
+    pointer-events: none;
+
+    .top-text, .bottom-text {
+      font-size: clamp(2rem, 5vw, 4rem);
+      @include text-gold-gradient();
+      font-weight: 300;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .middle-text {
+      font-family: $font-luxury;
+      font-size: clamp(4rem, 12vw, 10rem);
+      color: $white;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+  }
+}

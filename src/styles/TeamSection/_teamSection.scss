@@ -1,0 +1,103 @@
+#team-section {
+  position: relative;
+  min-height: 120vh;
+  width: 100vw;
+  background-color: #050505;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+  padding: 8rem 2rem 2rem 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // 🔹 Subtle Section Decorations
+  .section-decoration-left, .section-decoration-right {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    background: linear-gradient(90deg, red 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  }
+  .section-decoration-left { left: 0; }
+  .section-decoration-right { right: 0; transform: scaleX(-1); }
+
+  // 🔹 Premium Header
+  .section-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 10;
+
+    .overline {
+      font-size: 0.75rem;
+      letter-spacing: 0.6rem;
+      color: #d4af37;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 2vw, 4rem);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.4rem;
+      text-transform: uppercase;
+      margin: 0;
+      background: linear-gradient(180deg, #fff 40%, #8a6e2f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title-flourish {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      margin: 2rem auto;
+      position: relative;
+
+      &::before {
+        content: "✦";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #050505;
+        padding: 0 10px;
+        color: #d4af37;
+        font-size: 1.2rem;
+      }
+    }
+
+    .section-subtitle {
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  // 🔹 Cards Container
+  #team-cards-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem 2rem;
+    position: relative;
+    z-index: 5;
+    margin-top: 2rem;
+  }
+}

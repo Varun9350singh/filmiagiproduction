@@ -1,0 +1,245 @@
+$gold-main: #d4af37;
+$gold-light: #f9e29a;
+$gold-dark: #8a6e2f;
+$royal-bg: #0c0c0c;
+$text-gold: #e5c158;
+
+.royal-team-card {
+  
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 80px 1rem 20px;
+  background: $royal-bg;
+  padding: 1.5rem;
+  border-radius: 0;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 1px solid rgba($gold-main, 0.2);
+  
+
+
+  // 🔹 Luxury Embroidery Frame
+  .embroidery-frame {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid $gold-dark;
+    pointer-events: none;
+    z-index: 1;
+
+    // Stitched Gold Line
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 1.5px dashed $gold-main;
+      opacity: 0.5;
+      mask-image: linear-gradient(
+        45deg,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.5) 50%,
+        rgba(0,0,0,1) 100%
+      );
+    }
+    
+    // Outer solid frame
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 2px double $gold-main;
+      opacity: 0.3;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-20px) scale(1.02);
+    box-shadow: 0 50px 120px rgba(0, 0, 0, 0.95), 0 0 40px rgba($gold-main, 0.15);
+    
+    .embroidery-frame {
+      inset: 8px;
+      border-color: $gold-main;
+      &::after { opacity: 0.8; animation: dash-pulse 2s infinite ease-in-out; }
+    }
+
+    .image-container {
+      transform: translateY(-15px) translateX(-50%) scale(1.1);
+      .image-ring {
+        transform: rotate(180deg) scale(1.05);
+        border-color: $gold-light;
+      }
+    }
+
+    [class^="corner-"] {
+      width: 50px;
+      height: 50px;
+      opacity: 1;
+      border-width: 3px;
+    }
+  }
+
+  .card-outer-frame {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  // 🔹 Ornate Corners
+  [class^="corner-"] {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2.5px solid $gold-main;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.7;
+    z-index: 3;
+    
+    &::before {
+      content: '✦';
+      position: absolute;
+      font-size: 14px;
+      color: $gold-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .corner-tl { top: -15px; left: -15px; border-right: none; border-bottom: none; &::before { top: -4px; left: -4px; } }
+  .corner-tr { top: -15px; right: -15px; border-left: none; border-bottom: none; &::before { top: -4px; right: -4px; } }
+  .corner-bl { bottom: -15px; left: -15px; border-right: none; border-top: none; &::before { bottom: -4px; left: -4px; } }
+  .corner-br { bottom: -15px; right: -15px; border-left: none; border-top: none; &::before { bottom: -4px; right: -4px; } }
+
+  // 🔹 Large Image (Breaks top boundary)
+  .image-container {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    z-index: 5;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+
+    .image-ring {
+      position: absolute;
+      inset: -10px;
+      border: 2px solid transparent;
+      border-top: 2px solid $gold-main;
+      border-bottom: 2px solid $gold-main;
+      border-radius: 50%;
+      transition: all 1.5s ease;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid $royal-bg;
+      outline: 2px solid $gold-main;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  // 🔹 Content
+  .info-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-top: 60px; // Offset for image area
+
+    .role-badge {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      background: rgba($gold-main, 0.05);
+      border: 1px solid rgba($gold-main, 0.15);
+      color: $gold-main;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    }
+
+    .member-name {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin: 0;
+      background: linear-gradient(180deg, #fff 30%, $gold-main 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.2;
+    }
+
+    .divider-gold {
+      width: 70px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, $gold-main, $gold-light, $gold-main, transparent);
+      margin: 1rem auto;
+      position: relative;
+      
+      &::after {
+        content: '❖';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8px;
+        color: $gold-main;
+        background: $royal-bg;
+        padding: 0 4px;
+      }
+    }
+
+    // 🔹 Action Button (Moved inside info-content to match JSX)
+    .action-footer {
+      width: 100%;
+      margin-top: auto;
+      padding-top: 1rem;
+
+      .royal-btn {
+        width: 100%;
+        padding: 1rem;
+        @include backgroundGoldLinear();
+        background-size: 200% auto;
+        border: none;
+        color: #000;
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        cursor: pointer;
+        font-weight: 900;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+        &:hover {
+          background-position: right center;
+          transform: scale(1.05);
+          box-shadow: 0 15px 30px rgba($gold-main, 0.3);
+        }
+      }
+    }
+  }
+}
+
+@keyframes dash-pulse {
+  0% { opacity: 0.4; stroke-dashoffset: 0; }
+  50% { opacity: 0.8; stroke-dashoffset: 10; }
+  100% { opacity: 0.4; stroke-dashoffset: 0; }
+}
+

@@ -1,0 +1,32 @@
+// Gold palette (Requested)
+$gold-dark: #ae8625;
+$gold-light: #f7ef8a;
+$gold-mid: #d2ac47;
+$gold-bright: #edc967;
+$gold-vintage: #c5a059;
+
+// Monochromes
+$black: #000000;
+$dark-grey: #0a0a0a; // Slightly darker for more "premium" feel
+$white: #ffffff;
+
+// Gradients
+$gold-gradient: linear-gradient(135deg, $gold-dark, $gold-bright, $gold-mid, $gold-light, $gold-dark);
+$gold-linear: linear-gradient(to right, $gold-dark, $gold-bright, $gold-mid, $gold-light, $gold-dark);
+$gold-radial: radial-gradient(circle at center, $gold-light, $gold-dark);
+
+// Fonts
+$font-luxury: 'Playfair Display', serif;
+$font-body: 'Poppins', sans-serif;
+
+// Spacing & Borders
+$section-padding: 8rem 5%;
+$luxury-border: 1px solid rgba($gold-mid, 0.4);
+$transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;

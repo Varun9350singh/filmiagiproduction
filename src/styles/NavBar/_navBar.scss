@@ -1,0 +1,86 @@
+nav {
+  background-color: transparent;
+  position: fixed;
+  width: 100vw;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  display: flex;
+  @include flex-center-row(space-between);
+  img {
+    width: 10rem;
+  }
+  
+
+  #navButton {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2000;
+    transition: all 0.3s ease;
+
+    span {
+      display: block;
+      height: 4px;
+      background-color: $white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    #topSpan {
+      width: 3rem;
+    }
+    #middleSpan {
+      width: 2.5rem;
+    }
+    #bottomSpan {
+      width: 1.5rem;
+      align-self: flex-end;
+    }
+  }
+
+  #full-nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 25rem;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 1500;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    #menu-links {
+      display: flex;
+      margin-top:7rem ;
+      flex-direction: column;
+      align-items: start;
+      gap: 2rem;
+
+      .menuLink {
+        text-decoration: none;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        // transition: $transition-smooth;
+
+        &:hover {
+          @include text-gold-gradient();
+          transform: scale(1.1);
+        }
+      }
+
+      
+      
+    }
+  }
+}
+
+

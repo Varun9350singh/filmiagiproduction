@@ -1,0 +1,36 @@
+@mixin flex-center-row($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center-column($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin backgroundGoldLinear() {
+  background: $gold-gradient;
+  background-size: 200% auto;
+}
+
+@mixin text-gold-gradient {
+  background: $gold-linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: $mobile) { @content; }
+  } @else if $breakpoint == "tablet" {
+    @media (max-width: $tablet) { @content; }
+  } @else if $breakpoint == "laptop" {
+    @media (max-width: $laptop) { @content; }
+  } @else if $breakpoint == "desktop" {
+    @media (max-width: $desktop) { @content; }
+  }
+}

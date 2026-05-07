@@ -1,0 +1,443 @@
+#model-page {
+  // overflow-x: hidden;
+  // scrollbar-width: none;
+
+  #Model-hero-Section {
+    height: 70vh;
+    width: 100%;
+    overflow-y: hidden;
+    @include flex-center-column();
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    // 🔥 Base background (deep black + gold tone)
+    background: radial-gradient(
+      circle at center,
+      rgba($gold-dark, 0.15) 0%,
+      rgba(0, 0, 0, 0.9) 40%,
+      $black 100%
+    );
+
+    // ✨ Light glow overlay
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 40%,
+        rgba($gold-light, 0.25),
+        transparent 60%
+      );
+      filter: blur(80px);
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    // 🎬 Subtle grain texture (cinematic feel)
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 2;
+      font-family: $font-body;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.6rem;
+      text-transform: uppercase;
+      color: rgba($white, 0.6);
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      font-family: $font-luxury;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: 1;
+      text-align: center;
+      font-weight: 900;
+      text-transform: uppercase;
+
+      @include text-gold-gradient();
+
+      // ✨ Glow effect (luxury highlight)
+      text-shadow:
+        0 0 20px rgba($gold-light, 0.3),
+        0 0 40px rgba($gold-dark, 0.2);
+    }
+  }
+
+  #videoSection {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  // ✅ Desktop behavior
+  height: 120vh;
+
+  #videoDiv {
+    width: 20rem;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 5px;
+    }
+  }
+}
+
+/* ✅ FIXED MEDIA QUERY */
+@media (max-width: 703px) {
+  #videoSection {
+    height: auto;              // 🔥 shrink to content
+    padding: 2rem 0;
+  }
+
+  #videoSection #videoDiv {
+    width: 90%;                // responsive width
+    max-width: 400px;          // optional cap
+    margin: 0 auto;
+  }
+}
+
+  #about-section,
+  #stats-section,
+  #achievements-section,
+  #gallery-section,
+  #model-contact-section {
+    padding: 8rem 2rem;
+    background-color: $black;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: $font-luxury;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 4rem;
+      @include text-gold-gradient();
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  // About Section
+  #about-section {
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba($white, 0.8);
+        margin-bottom: 3rem;
+      }
+
+      .vision-box {
+        padding: 3rem;
+        border: $luxury-border;
+        background: rgba($gold-dark, 0.05);
+        position: relative;
+
+        &::before {
+          content: "“";
+          position: absolute;
+          top: -10px;
+          left: 20px;
+          font-family: $font-luxury;
+          font-size: 5rem;
+          color: $gold-mid;
+          opacity: 0.3;
+        }
+
+        h4 {
+          font-family: $font-luxury;
+          font-size: 1.5rem;
+          color: $gold-light;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-style: italic;
+          font-size: 1.2rem;
+          color: rgba($white, 0.9);
+        }
+      }
+    }
+  }
+
+  // Stats Section
+  #stats-section {
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+
+      .stat-card {
+        padding: 2rem;
+        border: 1px solid rgba($gold-mid, 0.2);
+        background: linear-gradient(
+          145deg,
+          rgba($white, 0.05) 0%,
+          rgba($white, 0) 100%
+        );
+        transition: $transition-smooth;
+        @include flex-center-column();
+        text-align: center;
+
+        &:hover {
+          border-color: $gold-mid;
+          transform: translateY(-5px);
+          background: rgba($gold-dark, 0.1);
+        }
+
+        .stat-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+          color: $gold-mid;
+          margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+          font-size: 1.5rem;
+          font-family: $font-luxury;
+          font-weight: 600;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  // Achievements Section
+  #achievements-section {
+    width: 100%;
+    padding: 6rem 2rem;
+    background: radial-gradient(
+      circle at top,
+      rgba($gold-dark, 0.08),
+      $black 70%
+    );
+    position: relative;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: $font-luxury;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 4rem;
+      @include text-gold-gradient();
+      letter-spacing: 2px;
+    }
+
+    .achievements-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .achievement-item {
+      position: relative;
+      padding: 2rem;
+      border-radius: 1rem;
+
+      // 🔥 Glass effect
+      background: rgba($white, 0.03);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba($gold-light, 0.15);
+
+      transition: all 0.4s ease;
+      overflow: hidden;
+
+      // ✨ gold glow border effect
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba($gold-light, 0.6),
+          transparent
+        );
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: 0.4s;
+      }
+
+      &:hover {
+        transform: translateY(-8px) scale(1.02);
+        background: rgba($gold-dark, 0.08);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      // 🔥 Replace bullet with vertical gold accent
+      .gold-bullet {
+        display: none;
+      }
+
+      // ✨ Left accent line
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20%;
+        height: 60%;
+        width: 3px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          $gold-light,
+          transparent
+        );
+      }
+
+      p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: rgba($white, 0.9);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  // Gallery Section
+  #gallery-section {
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+
+      .gallery-item {
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border-radius: 4px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba($black, 0.8)
+          );
+          opacity: 0;
+          transition: $transition-fast;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  // Contact Section
+  #model-contact-section {
+    padding-bottom: 12rem;
+    .contact-info {
+      @include flex-center-row();
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: $white;
+        font-size: 1.1rem;
+        transition: $transition-fast;
+        padding: 1rem 2rem;
+        border: 1px solid rgba($gold-mid, 0.3);
+        border-radius: 50px;
+
+        svg {
+          color: $gold-light;
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          border-color: $gold-light;
+          background: rgba($gold-dark, 0.1);
+          color: $gold-light;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  // Loading & Misc
+  .loading {
+    height: 100vh;
+    @include flex-center-row();
+    font-family: $font-luxury;
+    font-size: 2rem;
+    color: $gold-light;
+  }
+
+  @include respond-to("tablet") {
+    #about-section,
+    #stats-section,
+    #achievements-section,
+    #gallery-section,
+    #model-contact-section {
+      padding: 5rem 1rem;
+    }
+
+    .stat-card {
+      padding: 1.5rem !important;
+    }
+  }
+}

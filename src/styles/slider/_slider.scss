@@ -1,0 +1,21 @@
+#icon-slider {
+  position: absolute;
+  bottom: 23%;
+  left: -10%; 
+  width: 200%; 
+  rotate: calc(-1.5deg);
+  background-color: rgb(21, 20, 20);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  white-space: nowrap;
+  will-change: transform;
+
+  img {
+    flex-shrink: 0;
+    height: 3rem;
+    width: 3rem;
+  }
+}

@@ -1,0 +1,156 @@
+#latest-section {
+  width: 100%;
+  padding: $section-padding;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  .latest-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 5;
+
+    .overline {
+      font-family: $font-body;
+      color: $gold-mid;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: $font-luxury;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .title-flourish {
+      width: 150px;
+      height: 1px;
+      background: $gold-linear;
+      margin: 0 auto;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border: 1px solid $gold-mid;
+        rotate: 45deg;
+      }
+
+      &::before { left: -10px; }
+      &::after { right: -10px; }
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    perspective: 2000px;
+    padding: 2rem;
+  }
+
+  .image-frame {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background: #080808;
+    border: 1px solid rgba($gold-mid, 0.15);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba($gold-mid, 0.1);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .image-inner {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; // 16:9 Aspect Ratio
+      overflow: hidden;
+
+      .latest-image {
+        position: absolute;
+        top: -10%;
+        left: 0;
+        width: 100%;
+        height: 120%; // Extra height for parallax
+        object-fit: contain;
+      }
+
+      .gold-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba($black, 0.2) 50%,
+          rgba($black, 0.6) 100%
+        );
+        z-index: 1;
+      }
+    }
+
+    // 🔹 Corner Flourishes
+    .corner-latest {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 2px solid $gold-mid;
+      z-index: 3;
+      transition: $transition-smooth;
+
+      &.tl { top: -10px; left: -10px; border-right: none; border-bottom: none; }
+      &.tr { top: -10px; right: -10px; border-left: none; border-bottom: none; }
+      &.bl { bottom: -10px; left: -10px; border-right: none; border-top: none; }
+      &.br { bottom: -10px; right: -10px; border-left: none; border-top: none; }
+    }
+
+    &:hover .corner-latest {
+      width: 80px;
+      height: 80px;
+      border-color: $gold-bright;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  #latest-section {
+    padding: 5rem 5%;
+    
+    .latest-header {
+      margin-bottom: 4rem;
+    }
+
+    .image-frame {
+      padding: 10px;
+      
+      .corner-latest {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

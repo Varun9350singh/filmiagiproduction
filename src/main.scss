@@ -1,0 +1,68 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Variables & Mixins
+@import './styles/variables';
+@import './styles/mixins/mixins';
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    background-color: #000;
+    color: #fff;
+}
+
+
+html {
+    font-size: clamp(10px, 1vw, 16px);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ae8625, #f7ef8a);
+    border-radius: 10px;
+}
+
+// Global Classes
+.gold-text {
+    @include text-gold-gradient();
+}
+
+.luxury-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+
+
+// other files
+@import './styles/FounderSection/FounderSection';
+@import "./styles/hero/hero";
+@import './styles/NavBar/navBar';
+@import './styles/TeamCard/teamCard';
+@import './styles/TeamSection/teamSection';
+@import './styles/ContactSection/contactSection';
+@import './styles/WinnerSection/winnerSection';
+@import './styles/ModelPage/ModelPage';
+@import './styles/highlightsSections/highlightsSections';
+@import './styles/TeamPage/TeamPage';
+@import './styles/Latest/latest';
