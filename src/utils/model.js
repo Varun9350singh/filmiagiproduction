@@ -64,15 +64,18 @@ const modelsInfo = [
     name: "Muskan Gautam",
     winningEvent: 'Mrs Lucknow 2025',
     images: [
+      
+      "/images/winners/winner3/8.jpeg",
+      "/images/winners/winner3/9.jpeg",
+      "/images/winners/winner3/7.jpeg",
       "/images/winners/winner3/1.jpg",
       "/images/winners/winner3/2.jpeg",
       "/images/winners/winner3/3.jpeg",
       "/images/winners/winner3/4.jpeg",
       "/images/winners/winner3/5.jpeg",
       "/images/winners/winner3/6.jpeg",
-      "/images/winners/winner3/7.jpeg",
-      // "/images/winners/winner2/4.jpeg",
-      // "/images/winners/winner2/4.jpeg",
+      
+      
       // "/images/winners/winner2/4.jpeg",
     ],
     video: "/videos/winners/winner1/model1.mp4",
