@@ -11,8 +11,8 @@ const team = [
     ],
     contact: {
       email: "filmiagiproduction@gmail.com",
-      instagram: "@filmiagiproduction | @officialmrmissmrslucknow",
-      linkedin: "xxxxxxxxxx",
+      instagram: "@filmiagiproduction | @mrmissmrslucknow.official",
+      linkedin: "9650801601",
     },
   },
   {
@@ -27,8 +27,8 @@ const team = [
     ],
     contact: {
       email: "filmiagiproduction@gmail.com",
-      instagram: "@filmiagiproduction | @officialmrmissmrslucknow",
-      linkedin: "8303187215",
+      instagram: "@filmiagiproduction | @mrmissmrslucknow.official",
+      linkedin: "9650801601",
     },
 
   },
@@ -45,7 +45,7 @@ const team = [
     ],
     contact: {
       email: "filmiagiproduction@gmail.com",
-      instagram: "@abhishekdrohar | @filmiagiproduction | @officialmrmissmrslucknow",
+      instagram: "@abhishekdrohar | @filmiagiproduction | @mrmissmrslucknow.official",
       linkedin: " 9650801601",
     },
   }

@@ -1,5 +1,11 @@
 const hightlights={
     images:[
+    "/images/ffw/highlight3.jpeg",
+    "/images/ffw/highlight6.jpeg",
+    "/images/ffw/highlight4.jpeg",
+    "/images/ffw/highlight5.jpeg",
+    "/images/ffw/highlight1.jpeg",
+    "/images/ffw/highlight2.jpeg",
     "/images/ffw/1.jpeg",
     "/images/ffw/2.jpeg",
     "/images/ffw/3.jpeg",

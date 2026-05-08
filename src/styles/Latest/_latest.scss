@@ -9,7 +9,7 @@
 
   .latest-header {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 5;
 
@@ -26,13 +26,13 @@
 
     .section-title {
       font-family: $font-luxury;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2rem, 4vw, 4rem);
       background: $gold-gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.1;
       font-weight: 400;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .title-flourish {
@@ -52,7 +52,6 @@
         border: 1px solid $gold-mid;
         rotate: 45deg;
       }
-
       &::before { left: -10px; }
       &::after { right: -10px; }
     }
@@ -60,20 +59,25 @@
 
   .image-wrapper {
     width: 100%;
-    max-width: 1200px;
     display: flex;
     justify-content: center;
     perspective: 2000px;
-    padding: 2rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
   }
 
   .image-frame {
     position: relative;
     width: 100%;
+    // NEW LOGIC: Ratio 1:1.41. 
+    // To keep height under 90vh: 90 / 1.41 = ~63.
+    // We'll use 60vh to be safe and account for headers.
+    max-width: min(60vh, 600px); 
     padding: 15px;
     background: #080808;
     border: 1px solid rgba($gold-mid, 0.15);
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
 
     &::before {
       content: '';
@@ -87,17 +91,17 @@
     .image-inner {
       position: relative;
       width: 100%;
-      height: 0;
-      padding-bottom: 56.25%; // 16:9 Aspect Ratio
+      // 906x1280 ratio -> (1280 / 906) * 100 = 141.28%
+      padding-bottom: 141.28%; 
       overflow: hidden;
 
       .latest-image {
         position: absolute;
-        top: -10%;
+        top: 0;
         left: 0;
         width: 100%;
-        height: 120%; // Extra height for parallax
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
       }
 
       .gold-overlay {
@@ -113,15 +117,13 @@
       }
     }
 
-    // 🔹 Corner Flourishes
     .corner-latest {
       position: absolute;
-      width: 60px;
-      height: 60px;
+      width: clamp(25px, 4vw, 50px);
+      height: clamp(25px, 4vw, 50px);
       border: 2px solid $gold-mid;
       z-index: 3;
       transition: $transition-smooth;
-
       &.tl { top: -10px; left: -10px; border-right: none; border-bottom: none; }
       &.tr { top: -10px; right: -10px; border-left: none; border-bottom: none; }
       &.bl { bottom: -10px; left: -10px; border-right: none; border-top: none; }
@@ -129,28 +131,33 @@
     }
 
     &:hover .corner-latest {
-      width: 80px;
-      height: 80px;
+      width: clamp(35px, 5vw, 65px);
+      height: clamp(35px, 5vw, 65px);
       border-color: $gold-bright;
     }
   }
 }
 
+// Tablet
 @media (max-width: $tablet) {
   #latest-section {
-    padding: 5rem 5%;
-    
-    .latest-header {
-      margin-bottom: 4rem;
-    }
-
+    padding: 4rem 4%;
     .image-frame {
+      max-width: min(55vh, 500px);
       padding: 10px;
-      
-      .corner-latest {
-        width: 40px;
-        height: 40px;
-      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  #latest-section {
+    padding: 3rem 4%;
+    .image-frame {
+      // On mobile, we can be more aggressive with width 
+      // since the ratio isn't as extreme as 1:2.
+      max-width: min(55vh, 90vw); 
+      padding: 8px;
     }
   }
 }

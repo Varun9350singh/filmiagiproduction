@@ -53,16 +53,16 @@ const modelsInfo = [
       "To redefine the standards of beauty and professionalism in the fashion world, while mentoring the next generation of aspiring models to find their unique voice and confidence.",
     contact: {
       instagram: "@pallavijais79",
-      phone: "+91 9793292504",
-      whatsapp: "+91 9793292504",
-      email: "dhriti.pallavi@rediff.com",
+      phone: "+91 9650801601",
+      whatsapp: "+91 9650801601",
+      email: "filmiagiproduction@gmail.com",
       location: "Lucknow, India",
     },
   },
   {
     id: "c10b7bb7-4c2f-4ff7-880b-8f31681303d9",
     name: "Muskan Gautam",
-    winningEvent: 'Mrs Lucknow 2025',
+    winningEvent: 'Miss Lucknow 2025',
     images: [
       
       "/images/winners/winner3/8.jpeg",
@@ -118,10 +118,10 @@ achievements: [
 "To inspire young women—especially those from modest and first-generation backgrounds—to dream big, embrace their individuality, and confidently pursue diverse career paths. Muskan aims to redefine success by proving that intelligence, grace, and ambition can go hand in hand, while mentoring others to unlock their true potential.",
   contact: {
   instagram: "@thealternatemuskan",
-    phone: "+91 9667530822",
-      whatsapp: "+91 9667530822",
-        email: "muskangautan625@gmail.com",
-          location: "Delhi, India",
+    phone: "+91 9650801601",
+      whatsapp: "+91 9650801601",
+        email: "filmiagiproduction@gmail.com",
+          location: "Lucknow, India",
     },
   },
   {

@@ -13,7 +13,7 @@ function HighlightSections() {
     <section className="highlights-section" id="highlights">
       <div className="highlights-header">
         <div className="title-container">
-          <h1 className="gold-text">FFw Highlights</h1>
+          <h1 className="gold-text">FFW Highlights</h1>
           <img src="/images/logo2.PNG" id="ffwLogo" alt="FFw Logo" />
         </div>
 
