@@ -9,7 +9,7 @@ function Layout() {
         <>
             <NavBar />
             <Outlet key={location.pathname}/>   
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }

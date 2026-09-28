@@ -16,6 +16,10 @@ const navLinks = [
     to: "/#visionary",
   },
   {
+    name:"Events",
+    to:'/#events-section'
+  },
+  {
     name: "Team",
     to: "/#team-section",
   },
@@ -112,7 +116,7 @@ function NavBar() {
 
   return (
     <nav ref={navRef}>
-      <img src="/images/logo.webp" alt="filmiagi-production-logo" />
+      <img src="https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610916/logo_pyqy8t.webp" alt="filmiagi-production-logo" />
 
       <div id="navButton" onClick={() => setIsOpen(!isOpen)}>
         <span id="topSpan"></span>

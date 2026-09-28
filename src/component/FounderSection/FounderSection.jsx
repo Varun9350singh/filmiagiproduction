@@ -115,7 +115,7 @@ function FounderSection() {
         <h3 id="founder-last-name">DROHAR</h3>
         <picture>
           <source srcSet="/images/founder2.webp" type="image/webp" />
-        <img src="/images/founder2.webp" alt="founder" id="founder-image" />
+        <img src="https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610935/founder2_ffhqtw.webp" alt="founder" id="founder-image" />
         </picture>
         <button id="founder-read-more-button" onClick={onReadMoreClick}>Read About ➡ </button>
       </section>

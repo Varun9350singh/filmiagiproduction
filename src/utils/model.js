@@ -1,21 +1,138 @@
 const modelsInfo = [
   {
+    id: "5daa4589-za78-4s26-a2cc-zk80df5665dg3ecd30",
+    name: "Unnati Singh",
+    winningEvent: 'Miss Lucknow 2026',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610867/mainImg_lbagy5.webp",
+    images: [
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610873/unnati_mbbwov.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610870/mainImg_1_a10cb6.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610861/img6_qlhnns.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610859/img5_y29kno.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610856/img4_obl0bh.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610854/img3_ch9yr2.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610851/img2_qbrsch.webp"
+    ],
+    video: "",
+    stats: {
+      height: "5'4\"",
+      weight: "50kg",
+      waist: '26',
+      skinColor: "Dusky",
+      eyeColor: "Black",
+      hips: '36"',
+      bust: '32"',
+      tattoo: "No",
+      passport: "Yes",
+      hairColor: "Black",
+      bodyType: "Slim",
+    },
+    description:
+      "I am a model and pageant titleholder from Lucknow, passionate about fashion, beauty, pageantry, ramp walking, dance, and creative content. As Miss Lucknow 2026, I am building my journey in the modelling and pageant industry while developing my skills in communication, presentation, grooming, and performance.",
+    achievements: [
+      "Master's in Geography — Final Year",
+      "Bachelor's in Geography, History & Political Science",
+      "Civil aspirant",
+      "Miss Lucknow 2026"
+    ],
+    vision:
+      "Wanted to be the next Miss India N a successful model ",
+    contact: {
+      instagram: "@unnati_singh__65",
+      email: "singhunnati946@gmail.com",
+      location: "Lucknow, India",
+    },
+  },
+  {
+    id: "5dsa4589-ml78-4ad6-a2cc-gs80df5665dg3ecd30",
+    name: "Nisha Chandra",
+    winningEvent: 'Mrs Lucknow 2026',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610904/mainImg_cjjse2.webp",
+    images: [
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610910/img2_ijdaaw.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610907/img1_h5vctn.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610913/img3_p2mlwz.webp",
+    ],
+    video: "",
+    stats: {
+      height: "5'3\"",
+      weight: "50kg",
+      waist: '26',
+      skinColor: "Dusky",
+      eyeColor: "Black",
+      hips: '36"',
+      bust: '32"',
+      tattoo: "Yes",
+      passport: "No",
+      hairColor: "Black",
+      bodyType: "Slim",
+    },
+    description:
+      "I am a model and pageant titleholder from Lucknow, passionate about fashion, beauty, pageantry, ramp walking, dance, and creative content. As Mrs Lucknow 2026, I am building my journey in the modelling and pageant industry while developing my skills in communication, presentation, grooming, and performance.",
+    achievements: [
+      "Winner of Mrs Lucknow 2026",
+      "Winner of Mrs Prayagraj 2025",
+    ],
+    vision:
+      "Wanted to be the next Mrs India and a successful model ",
+    contact: {
+      instagram: "@nisha.chandra.2028",
+      location: "Prayagraj, India",
+    },
+  },
+  {
+    id: "5dzx4589-xxx78-4yu6-sk2cc-as80df5665dg3ecd30",
+    name: "Aditya nishad",
+    winningEvent: 'MR LUCKNOW 2026 ',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610877/mainImg_eqvwzy.webp",
+    images: [
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610880/img1_o331vk.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610883/img3_gneccm.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610886/img6_kqlymi.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610893/img5_bsrkwq.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610899/img4_uvy2dt.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610889/img2_bye6lm.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610896/img7_sngdjx.webp",
+    ],
+    video: "",
+    stats: {
+      height: "5'8\"",
+      weight: "59kg",
+      bodyType: 'aesthetic',
+      "shoe Size" :"9",
+      waist:"30",
+      chest:"40",
+    },
+    description:
+      "I am a model and pageant titleholder from Lucknow, passionate about fashion, beauty, pageantry, ramp walking, dance, and creative content. As Mr Lucknow 2026 (Aditya Nishad), I am building my journey in the modelling and pageant industry while developing my skills in communication, presentation, grooming, and performance.",
+    achievements: [
+      "Mr Lucknow 2026",
+      "Having experience of more than 25 runway in India",
+    ],
+    vision:
+      "Wanted to be the next Mr India and successful model ",
+    contact: {
+      instagram: "@http.adityaaaaa",
+      location: "Azamgarh, India",
+    },
+  },
+  {
     id: "5daa0742-ba78-4d26-a2cc-fc80fe3ecd30",
     name: "Pallavi Jaiswal",
     winningEvent: 'Mrs Lucknow 2025',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610755/mainImg_nykdub.webp",
     images: [
-      "/images/winners/winner1/1.jpeg",
-      "/images/winners/winner1/2.jpeg",
-      "/images/winners/winner1/3.jpeg",
-      "/images/winners/winner1/4.jpeg",
-      "/images/winners/winner1/5.jpeg",
-      "/images/winners/winner1/6.jpeg",
-      "/images/winners/winner1/7.jpeg",
-      "/images/winners/winner1/8.jpeg",
-      "/images/winners/winner1/9.jpeg",
-      "/images/winners/winner1/10.jpeg",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610762/1_lvdxs6.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610764/2_i5cqb5.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610767/4_ospzad.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610757/9_esenkz.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610769/3_gg4kso.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610772/5_uurys7.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610752/7_pz3o7b.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610750/8_jb1ubg.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610747/6_mskt2f.webp"
     ],
-    video: "https://res.cloudinary.com/df7lu0dw7/video/upload/v1776188110/WhatsApp_Video_2026-04-14_at_11.02.54_PM_jmjjvz.mp4",
+    video: "https://res.cloudinary.com/df7lu0dw7/video/upload/v1790610584/winner1_ga5wyq.webm",
     stats: {
       height: "5'3\"",
       weight: "50 kg",
@@ -63,22 +180,19 @@ const modelsInfo = [
     id: "c10b7bb7-4c2f-4ff7-880b-8f31681303d9",
     name: "Muskan Gautam",
     winningEvent: 'Miss Lucknow 2025',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610838/mainImg_cfvdcw.webp",
     images: [
-      
-      "/images/winners/winner3/8.jpeg",
-      "/images/winners/winner3/9.jpeg",
-      "/images/winners/winner3/7.jpeg",
-      "/images/winners/winner3/1.jpg",
-      "/images/winners/winner3/2.jpeg",
-      "/images/winners/winner3/3.jpeg",
-      "/images/winners/winner3/4.jpeg",
-      "/images/winners/winner3/5.jpeg",
-      "/images/winners/winner3/6.jpeg",
-      
-      
-      // "/images/winners/winner2/4.jpeg",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610833/9_k39nsl.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610841/1_r9neyy.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610847/3_eireao.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610844/2_dcpgsz.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610836/8_klzlq8.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610828/5_tqbblp.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610831/7_q2znfz.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610825/6_cbjagg.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610822/4_kvcnja.webp"
     ],
-    video: "/videos/winners/winner1/model1.mp4",
+    video: "",
     stats: {
       height: "5'3",
       weight: "55 kg",
@@ -128,19 +242,14 @@ achievements: [
     id: "5daa0742-ba78-4d26-a2cc-fc80df5665dg3ecd30",
     name: "Nihal Singh",
     winningEvent: 'Mr Lucknow 2025',
+    coverImg:"https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610818/mainImg_xk2xwy.webp",
     images: [
-      "/images/winners/winner2/1.jpeg",
-      "/images/winners/winner2/2.jpeg",
-      "/images/winners/winner2/3.jpeg",
-      "/images/winners/winner2/4.jpeg",
-      // "/images/winners/winner2/1.jpeg",
-      // "/images/winners/winner2/2.jpeg",
-      // "/images/winners/winner2/3.jpeg",
-      // "/images/winners/winner2/4.jpeg",
-      // "/images/winners/winner2/4.jpeg",
-      // "/images/winners/winner2/4.jpeg",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610807/1_anmxeh.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610809/3_co52ce.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610812/2_y74vkw.webp",
+      "https://res.cloudinary.com/df7lu0dw7/image/upload/v1790610815/4_qt5hxf.webp",
     ],
-    video: "/videos/winners/winner1/model1.mp4",
+    video: "",
     stats: {
       height: "5'8\"",
       weight: "69 kg",
@@ -167,6 +276,7 @@ achievements: [
       location: "Lucknow, India",
     },
   },
+  
   
 ];
 

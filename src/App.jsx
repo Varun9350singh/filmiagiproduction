@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import ModelPage from "./component/modelPage/ModelPage";
 import TeamPage from "./component/TeamPage/TeamPage";
 import NotFound from "./component/NotFound/NotFound";
+import EventPage from './component/eventPage/EventPage.jsx'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       children:[
         {path:'', element:<Home/>},
         {path:'artist/:artistId',element:<ModelPage/>},
-        {path:'team/:teamId',element:<TeamPage/>}
+        {path:'team/:teamId',element:<TeamPage/>},
+        {path:'events/:eventName',element:<EventPage/>}
       ]
     },
     {

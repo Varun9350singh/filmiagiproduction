@@ -1,86 +1,60 @@
-import React, { useMemo } from 'react'
-import { useParams, Link } from 'react-router-dom'
-
-import team from '../../utils/team.js'
-import NotFound from '../NotFound/NotFound'
+import React, { useMemo } from "react";
+import { useParams } from "react-router-dom";
+import { FaEnvelope, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import team from "../../utils/team";
+import NotFound from "../NotFound/NotFound";
 
 function TeamPage() {
-    const { teamId } = useParams();
-    const teamMembers = team;
-    const member = useMemo(
-        () => teamMembers.find((item) => String(item.id) === String(teamId)),
-        [teamId]
-    )
+  const { teamId } = useParams();
+  const member = useMemo(() => team.find((item) => String(item.id) === String(teamId)), [teamId]);
+  if (!member) return <NotFound />;
 
-    if (!member) return <NotFound />;
+  const contact = member.contact || {};
+  const profileNumber = String(team.findIndex((item) => item.id === member.id) + 1).padStart(2, "0");
 
-    return (
-        <section className='profile-page-container'>
-            <header className='profile-hero'>
-                <div className='hero-copy'>
-                    <span className='hero-label'>Executive Profile</span>
-                    <h1>{member.name}</h1>
-                    <p className='hero-intro'>{member.summary}</p>
-                </div>
-                <div className='hero-accent'>
-                    <span className='accent-line'></span>
-                    <span className='accent-dot'></span>
-                </div>
-            </header>
+  return (
+    <main className="team-profile">
 
-            <div className='profile-layout'>
-                <aside className='profile-sidebar'>
-                    <div className='profile-image-wrap'>
-                        <img src={member.image} alt={member.name} />
-                        <div className='role-badge'>{member.role}</div>
-                    </div>
-                </aside>
+      <section className="team-profile__intro">
+        <div className="team-profile__title-block">
+          <p className="team-profile__role">{member.role}</p>
+          <h1>{member.name}</h1>
+          <div className="team-profile__title-rule"><span /> <span>Team Filmiagi</span></div>
+        </div>
+        <p className="team-profile__statement">The people behind every perfectly placed spotlight.</p>
+      </section>
 
-                <main className='profile-main'>
-                    <section className='profile-card'>
-                        <div className='profile-card-head'>
-                            <span>Profile</span>
-                            <h2>Professional Overview</h2>
-                        </div>
-                        <div className='profile-card-body'>
-                            {
-                                member.description && member.description.length>0 && member.description.map((desc,index)=>{
-                                    return (
-                                        <>
-                                            <p key={`${member.id}+${index}`}>{desc}</p>
-                                            <br />
-                                        </>
-                                    )
-                                })
-                            }
-                            <p></p>
-                        </div>
-                    </section>
+      <section className="team-profile__dossier">
+        <div className="team-profile__portrait">
+          <div className="team-profile__portrait-grid" aria-hidden="true" />
+          <img src={member.image} alt={member.name} />
+          <p className="team-profile__portrait-caption">Filmiagi / {profileNumber}</p>
+        </div>
+        <div className="team-profile__bio">
+          <div className="team-profile__bio-head"><span>01</span><p>Studio profile</p></div>
+          <h2>Building the vision, beyond the runway.</h2>
+          <div className="team-profile__bio-copy">
+            {member.description?.map((paragraph, index) => <p key={`${member.id}-${index}`}>{paragraph}</p>)}
+          </div>
+        </div>
+      </section>
 
-                    <section className='profile-card profile-contact-card'>
-                        <div className='profile-card-head'>
-                            <span>Contact</span>
-                            <h2>Direct connection</h2>
-                        </div>
-                        <div className='contact-grid'>
-                            <p  className='contact-pill'>
-                                <span>✉</span>
-                                <span>{member.contact.email}</span>
-                            </p>
-                            <p  rel='noreferrer' className='contact-pill'>
-                                <span></span>
-                                <span>{member.contact.instagram}</span>
-                            </p>
-                            <p rel='noreferrer' className='contact-pill'>
-                                <span></span>
-                                <span>{member.contact.linkedin}</span>
-                            </p>
-                        </div>
-                    </section>
-                </main>
-            </div>
-        </section>
-    )
+      <section className="team-profile__signature">
+        <span className="team-profile__signature-mark">F</span>
+        <p>“The detail is not a detail. It is the design.”</p>
+        <span>FILMIAGI / STUDIO</span>
+      </section>
+
+      {Object.values(contact).some(Boolean) && <section className="team-profile__contact">
+        <div><p className="team-profile__kicker">Collaborate</p><h2>Let’s make an<br />entrance.</h2></div>
+        <div className="team-profile__contact-list">
+          {contact.email && <a href={`mailto:${contact.email}`}><FaEnvelope /><span>Email</span><strong>{contact.email}</strong></a>}
+          {contact.instagram && <span><FaInstagram /><span>Instagram</span><strong>{contact.instagram}</strong></span>}
+          {contact.linkedin && <a href={`tel:${contact.linkedin.replace(/\s/g, "")}`}><FaPhoneAlt /><span>Phone</span><strong>{contact.linkedin}</strong></a>}
+        </div>
+      </section>}
+    </main>
+  );
 }
 
-export default TeamPage
+export default TeamPage;

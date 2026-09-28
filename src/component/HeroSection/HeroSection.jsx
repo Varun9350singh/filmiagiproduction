@@ -95,7 +95,7 @@ function HeroSection() {
 
   return (
     <section id="hero-section" ref={main}>
-      <video src="https://res.cloudinary.com/df7lu0dw7/video/upload/v1776188106/WhatsApp_Video_2026-04-14_at_10.57.22_PM_cke7ym.mp4" muted autoPlay loop></video>
+      <video src="https://res.cloudinary.com/df7lu0dw7/video/upload/v1790610570/homePage_j2y7bf.webm" muted autoPlay loop></video>
       <div id="transparent-Layer"></div>
       <div id="hero-text-section">
         <h3>A World Of Luxury</h3>

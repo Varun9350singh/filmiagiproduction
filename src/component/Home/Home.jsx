@@ -5,8 +5,8 @@ import FounderSection from "../FounderSection/FounderSection.jsx";
 import TeamSection from "../TeamSection/TeamSection.jsx";
 import WinnerSection from "../WinnerSection/WinnerSection.jsx";
 import ContactSection from "../ContactSection/ContactSection.jsx";
-import HighlightSections from "../highlightsSections/highlightSections.jsx";
 import Latest from "../Latest/Latest.jsx";
+import EventsSection from "../eventSection/EventsSection.jsx";
 
 import modelsInfo from '../../utils/model.js'
 import latestEvent from '../../utils/latest.js'
@@ -54,13 +54,14 @@ function Home() {
 
       <HeroSection />
       <FounderSection />
+      <EventsSection/>
       <TeamSection />
       <WinnerSection
         title="MEET OUR CHAMPIONS"
         winners={modelsInfo}
         subtitle={"The Hall of Frame"}
       />
-      <HighlightSections/>
+      {/* <HighlightSections/> */}
       <Latest image={`${latestEvent.noticeImage}`} title={latestEvent.title} subtitle={latestEvent.subtitle} />
       <ContactSection />
     </>
